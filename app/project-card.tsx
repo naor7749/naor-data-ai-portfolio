@@ -83,6 +83,14 @@ const projectVisuals: Record<string, VisualConfig> = {
       he: "השוואת ביצועים בין EfficientNetV2B0 ל-MobileNetV3Small",
     },
   },
+  "Car Price ML Benchmark": {
+    type: "image",
+    src: "https://raw.githubusercontent.com/naor7749/car-price-ml-benchmark/main/figures/actual_vs_predicted.png",
+    alt: {
+      en: "Scatter plot comparing actual and predicted vehicle prices for the XGBoost holdout evaluation",
+      he: "׳×׳¨׳©׳™׳ ׳₪׳™׳–׳•׳¨ ׳”׳׳©׳•׳•׳” ׳‘׳™׳ ׳׳—׳™׳¨׳™ ׳¨׳›׳‘ ׳׳׳™׳×׳™׳™׳ ׳׳׳—׳™׳¨׳™׳ ׳©׳—׳–׳” ׳׳•׳“׳ XGBoost ׳‘׳§׳‘׳•׳¦׳× ׳”׳‘׳“׳™׳§׳”",
+    },
+  },
 };
 
 function ProjectVisual({

@@ -1,8 +1,32 @@
-import { siteContent, type Locale } from "./content";
+import { siteContent, type Locale, type Project } from "./content";
 import { DocumentLanguage } from "./document-language";
 import { ProjectCard } from "./project-card";
 
 
+const carProject: Record<Locale, Project> = {
+  en: {
+    number: "06",
+    title: "Car Price ML Benchmark",
+    label: "Supervised Learning",
+    description:
+      "An end-to-end benchmark for predicting vehicle listing prices with leakage-safe preprocessing, feature engineering, cross-validation, and model comparison.",
+    outcome:
+      "XGBoost achieved an Rֲ² of 0.9627 with a mean absolute error of approximately $1,328.",
+    technologies: ["Python", "XGBoost", "scikit-learn", "Feature Engineering"],
+    href: "https://github.com/naor7749/car-price-ml-benchmark",
+  },
+  he: {
+    number: "06",
+    title: "Car Price ML Benchmark",
+    label: "׳׳׳™׳“׳” ׳׳•׳ ׳—׳™׳×",
+    description:
+      "׳‘׳ ׳¦'׳׳¨׳§ ׳׳§׳¦׳” ׳׳§׳¦׳” ׳׳—׳™׳–׳•׳™ ׳׳—׳™׳¨׳™ ׳¨׳›׳‘׳™׳, ׳¢׳ preprocessing ׳׳׳ ׳“׳׳™׳₪׳× ׳׳™׳“׳¢, ׳”׳ ׳“׳¡׳× ׳₪׳™׳¦'׳¨׳™׳, Cross Validation ׳•׳”׳©׳•׳•׳׳× ׳׳•׳“׳׳™׳.",
+    outcome:
+      "׳׳•׳“׳ XGBoost ׳”׳©׳™׳’ Rֲ² ׳©׳ 0.9627 ׳•׳©׳’׳™׳׳” ׳׳•׳—׳׳˜׳× ׳׳׳•׳¦׳¢׳× ׳©׳ ׳›-1,328 ׳“׳•׳׳¨.",
+    technologies: ["Python", "XGBoost", "scikit-learn", "Feature Engineering"],
+    href: "https://github.com/naor7749/car-price-ml-benchmark",
+  },
+};
 const projectResults: Record<Locale, Record<string, string>> = {
   en: {
     "ICD-10-GM Embedding Benchmark":
@@ -62,6 +86,7 @@ function DataCanvas() {
 
 export function PortfolioPage({ locale }: { locale: Locale }) {
   const content = siteContent[locale];
+  const projects = [...content.projects, carProject[locale]];
   const languageHref = locale === "he" ? "/" : "/he";
   const languageLabel = locale === "he" ? "EN" : "עב";
 
@@ -159,7 +184,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           </div>
 
           <div className="projects-grid">
-            {content.projects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard
                 key={project.title}
                 project={project}
