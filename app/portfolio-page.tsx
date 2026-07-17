@@ -1,5 +1,34 @@
 import { siteContent, type Locale } from "./content";
 import { DocumentLanguage } from "./document-language";
+import { ProjectCard } from "./project-card";
+
+
+const projectResults: Record<Locale, Record<string, string>> = {
+  en: {
+    "ICD-10-GM Embedding Benchmark":
+      "BioLORD achieved 90.9% Patient Hit@10 on a synthetic benchmark of 1,000 patients, retrieving from 16,905 German ICD-10-GM codes.",
+    "NBA Functional Archetypes":
+      "In 2023-24, functional roster diversity correlated 0.83 with team win percentage, compared with 0.31 for traditional positions.",
+    "Global Life Expectancy Analysis":
+      "Schooling showed a Pearson correlation of 0.74 with life expectancy across 2,938 country-year observations.",
+    "Scientific Metadata Pipeline":
+      "Processed 3,305 unique scientific articles into a consistent 44-column dataset with automatic checkpoints and CI-backed tests.",
+    "Glasses Classification - CNN":
+      "EfficientNetV2B0 and MobileNetV3Small both achieved 85.11% validation accuracy; EfficientNetV2B0 reached 0.9322 ROC-AUC, while MobileNetV3Small used about 6.5× fewer parameters.",
+  },
+  he: {
+    "ICD-10-GM Embedding Benchmark":
+      "BioLORD השיג Patient Hit@10 של 90.9% בבנצ'מרק סינתטי של 1,000 מטופלים, בחיפוש מתוך 16,905 קודי ICD-10-GM בגרמנית.",
+    "NBA Functional Archetypes":
+      "בעונת 2023-24, מגוון תפקודי בסגל הציג מתאם של 0.83 עם אחוז הניצחונות, לעומת 0.31 עבור העמדות המסורתיות.",
+    "Global Life Expectancy Analysis":
+      "מספר שנות הלימוד הציג מתאם פירסון של 0.74 עם תוחלת החיים, על פני 2,938 תצפיות של מדינות ושנים.",
+    "Scientific Metadata Pipeline":
+      "המערכת עיבדה 3,305 מאמרים מדעיים ייחודיים למאגר עקבי בן 44 עמודות, עם שמירות ביניים אוטומטיות ובדיקות CI.",
+    "Glasses Classification - CNN":
+      "EfficientNetV2B0 ו-MobileNetV3Small השיגו דיוק של 85.11%; ‏EfficientNet הגיע ל-ROC-AUC של 0.9322, בעוד MobileNet השתמש בכפי 6.5 פחות פרמטרים.",
+  },
+};
 
 function ArrowIcon({ external = false, locale }: { external?: boolean; locale: Locale }) {
   return <span aria-hidden="true">{external ? "↗" : locale === "he" ? "←" : "→"}</span>;
@@ -118,7 +147,6 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
-
       <section className="section projects-section" id="projects">
         <div className="shell">
           <div className="section-heading reveal">
@@ -126,53 +154,34 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
               <p className="section-index">{content.projectsSection.index}</p>
               <h2>{content.projectsSection.title}</h2>
             </div>
+
             <p>{content.projectsSection.description}</p>
           </div>
 
           <div className="projects-grid">
             {content.projects.map((project) => (
-              <article className={`project-card ${project.featured ? "featured" : ""}`} key={project.title}>
-                <div className="project-card-top">
-                  <span className="project-number">{project.number}</span>
-                  <span className="project-label">{project.label}</span>
-                </div>
-                <div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                </div>
-                <div className="project-outcome">
-                  <span>THE POINT</span>
-                  <strong>{project.outcome}</strong>
-                </div>
-                <div className="project-footer">
-                  <ul aria-label={`${content.projectsSection.technologiesLabel} ${project.title}`}>
-                    {project.technologies.map((technology) => (
-                      <li key={technology}>{technology}</li>
-                    ))}
-                  </ul>
-                  {project.href ? (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`${content.projectsSection.githubLabel}: ${project.title}`}
-                    >
-                      <ArrowIcon external locale={locale} />
-                    </a>
-                  ) : (
-                    <span className="project-status">CASE STUDY</span>
-                  )}
-                </div>
-              </article>
+              <ProjectCard
+                key={project.title}
+                project={project}
+                locale={locale}
+                technologiesLabel={content.projectsSection.technologiesLabel}
+                githubLabel={content.projectsSection.githubLabel}
+                result={projectResults[locale][project.title] ?? project.outcome}
+              />
             ))}
           </div>
 
-          <a className="text-link" href="https://github.com/naor7749" target="_blank" rel="noreferrer">
-            {content.projectsSection.allProjects} <ArrowIcon external locale={locale} />
+          <a
+            className="text-link"
+            href="https://github.com/naor7749"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {content.projectsSection.allProjects}{" "}
+            <ArrowIcon external locale={locale} />
           </a>
         </div>
       </section>
-
       <section className="section resume-section" id="experience">
         <div className="shell">
           <div className="section-heading reveal">
@@ -182,7 +191,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             </div>
             <p>{content.profileSection.description}</p>
           </div>
-
+{/* 
           <article className="service-highlight reveal">
             <div>
               <p className="service-kicker">{content.reserveService.label}</p>
@@ -190,7 +199,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
               <p className="service-place">{content.reserveService.place}</p>
             </div>
             <p className="service-detail">{content.reserveService.detail}</p>
-          </article>
+          </article> */}
 
           <div className="resume-layout">
             <div className="timeline">
@@ -210,7 +219,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             </div>
 
             <aside className="skills-panel" aria-label={content.profileSection.capabilitiesLabel}>
-              <p className="panel-kicker">CAPABILITIES</p>
+              <p className="panel-kicker">{content.profileSection.capabilitiesLabel}</p>
               {content.skillGroups.map((group) => (
                 <div className="skill-group" key={group.title}>
                   <h3>{group.title}</h3>
@@ -223,7 +232,6 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
               ))}
             </aside>
           </div>
-
         </div>
       </section>
 

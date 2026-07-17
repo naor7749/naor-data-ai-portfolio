@@ -40,12 +40,7 @@ type LocalizedContent = {
     description: string;
     capabilitiesLabel: string;
   };
-  reserveService: {
-    label: string;
-    title: string;
-    place: string;
-    detail: string;
-  };
+
   experience: {
     period: string;
     role: string;
@@ -104,6 +99,7 @@ const sharedProjects = {
     title: "Glasses Classification - CNN",
     label: "Deep Learning",
     technologies: ["TensorFlow", "Keras", "CNN", "Computer Vision"],
+    href: "https://github.com/naor7749/glasses-classification-deep-learning",
   },
 };
 
@@ -180,20 +176,13 @@ export const siteContent: Record<Locale, LocalizedContent> = {
         "חשיבה אנליטית, הבנה אנושית ויישום מעשי - לפתרון בעיות אמיתיות ולא רק לאימון מודלים.",
       capabilitiesLabel: "יכולות וכלים",
     },
-    reserveService: {
-      label: "שירות מילואים",
-      title: "רס\"ן (מיל') ומפקד פלוגה",
-      place: "שירות מילואים פעיל בצה\"ל",
-      detail:
-        "שירות המילואים נמשך לצד המסלול המקצועי והאקדמי, עם למעלה מ-450 ימי מילואים מאז 7 באוקטובר ופיקוד על פלוגה של כ-100 לוחמים ולוחמות.",
-    },
     experience: [
       {
         period: "2024 - היום",
-        role: "פרויקטי Data & AI עצמאיים",
-        place: "מחקר, ניתוח ופיתוח מקצה לקצה",
+        role: "מוביל פרויקטי Data & AI",
+        place: "מחקר, פיתוח ויישום מקצה לקצה",
         detail:
-          "פיתוח פרויקטים עצמאיים בתחומי Healthcare NLP, Deep Learning, ניתוח נתוני ספורט, Data Pipelines וויזואליזציה אינטראקטיבית - מאיסוף נתונים ומידול ועד תיעוד והצגת התוצרים.",
+          "הובלת פרויקטים בתחומי Healthcare NLP, Deep Learning, ניתוח נתוני ספורט, Data Pipelines וויזואליזציה אינטראקטיבית - מהגדרת הבעיה ואיסוף הנתונים ועד מידול, הערכה, תיעוד והצגת התוצרים.",
       },
       {
         period: "2025 - היום",
@@ -212,6 +201,13 @@ export const siteContent: Record<Locale, LocalizedContent> = {
         secondary: true,
       },
       {
+        period: "2023 - היום",
+        role: 'מפקד פלוגה במילואים | רס"ן',
+        place: 'שירות מילואים פעיל בצה"ל',
+        detail:
+          "פיקוד על פלוגה של כ-100 לוחמים ולוחמות במסגרת למעלה מ-450 ימי מילואים מאז 7 באוקטובר 2023, עם אחריות על אנשים, תכנון, תיאום וקבלת החלטות בתנאי אי-ודאות.",
+      },
+      {
         period: "M.A.",
         role: "Data Science & Applied AI",
         place: "אוניברסיטת בר-אילן",
@@ -228,11 +224,24 @@ export const siteContent: Record<Locale, LocalizedContent> = {
     ],
     skillGroups: [
       {
-        title: "Data & BI",
-        items: ["Python", "SQL", "Power BI", "Excel", "Pandas", "Plotly"],
+        title: "דאטה, בינה עסקית ופיתוח Web",
+        items: [
+          "Python",
+          "SQL",
+          "Power BI",
+          "Excel",
+          "Pandas",
+          "Plotly",
+          "Data Storytelling",
+          "Statistical Analysis",
+          "Next.js",
+          "TypeScript",
+          "Responsive Web Development",
+          "Vercel",
+        ],
       },
       {
-        title: "AI & ML",
+        title: "בינה מלאכותית ולמידת מכונה",
         items: [
           "Machine Learning",
           "Deep Learning",
@@ -243,10 +252,6 @@ export const siteContent: Record<Locale, LocalizedContent> = {
           "Clustering",
           "SHAP",
         ],
-      },
-      {
-        title: "Working approach",
-        items: ["Analytical storytelling", "Research", "Problem framing", "Reproducibility"],
       },
     ],
     contact: {
@@ -261,7 +266,7 @@ export const siteContent: Record<Locale, LocalizedContent> = {
           href: "tel:+972524493963",
         },
         {
-          label: "מייל",
+          label: "דואר אלקטרוני",
           value: "naor7749@gmail.com",
           href: "mailto:naor7749@gmail.com",
         },
@@ -269,7 +274,7 @@ export const siteContent: Record<Locale, LocalizedContent> = {
           label: "LinkedIn",
           value: "linkedin.com/in/naor-shem-tov",
           href: "https://www.linkedin.com/in/naor-shem-tov-949bb9174/",
-          external: true,
+          // external: true,
         },
       ],
     },
@@ -351,17 +356,11 @@ export const siteContent: Record<Locale, LocalizedContent> = {
         "Analytical thinking, human understanding, and practical implementation - applied to real problems, not just model training.",
       capabilitiesLabel: "Capabilities and tools",
     },
-    reserveService: {
-      label: "RESERVE SERVICE",
-      title: "Major (Res.) & Company Commander",
-      place: "Active IDF reserve service",
-      detail:
-        "Reserve service has continued alongside the professional and academic path, including more than 450 reserve-duty days since October 7 and command of a company of around 100 soldiers.",
-    },
+
     experience: [
       {
         period: "2024 - Present",
-        role: "Independent Data & AI Projects",
+        role: "Data & AI Project Lead",
         place: "End-to-end research, analytics & development",
         detail:
           "Development of independent projects across healthcare NLP, deep learning, sports analytics, data pipelines, and interactive visualization - from data collection and modeling to documentation and deployment.",
@@ -383,6 +382,13 @@ export const siteContent: Record<Locale, LocalizedContent> = {
         secondary: true,
       },
       {
+        period: "2023 - Present",
+        role: "Reserve Company Commander | Major",
+        place: "Israel Defense Forces",
+        detail:
+          "Commanding a company of approximately 100 soldiers during more than 450 days of reserve service since October 7, 2023, with responsibility for personnel, planning, coordination, and decision-making under uncertainty.",
+      },
+      {
         period: "M.A.",
         role: "Data Science & Applied AI",
         place: "Bar-Ilan University",
@@ -399,8 +405,21 @@ export const siteContent: Record<Locale, LocalizedContent> = {
     ],
     skillGroups: [
       {
-        title: "Data & BI",
-        items: ["Python", "SQL", "Power BI", "Excel", "Pandas", "Plotly"],
+        title: "Data, BI & Web",
+        items: [
+          "Python",
+          "SQL",
+          "Power BI",
+          "Excel",
+          "Pandas",
+          "Plotly",
+          "Data Storytelling",
+          "Statistical Analysis",
+          "Next.js",
+          "TypeScript",
+          "Responsive Web Development",
+          "Vercel",
+        ],
       },
       {
         title: "AI & ML",
@@ -430,17 +449,19 @@ export const siteContent: Record<Locale, LocalizedContent> = {
           label: "Phone",
           value: "+972 52-449-3963",
           href: "tel:+972524493963",
+          // external: true
         },
         {
           label: "Email",
           value: "naor7749@gmail.com",
           href: "mailto:naor7749@gmail.com",
+          // external: true
         },
         {
           label: "LinkedIn",
           value: "linkedin.com/in/naor-shem-tov",
           href: "https://www.linkedin.com/in/naor-shem-tov-949bb9174/",
-          external: true,
+          // external: true,
         },
       ],
     },
