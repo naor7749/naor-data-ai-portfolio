@@ -434,10 +434,6 @@ export const siteContent: Record<Locale, LocalizedContent> = {
           "SHAP",
         ],
       },
-      {
-        title: "Working approach",
-        items: ["Analytical storytelling", "Research", "Problem framing", "Reproducibility"],
-      },
     ],
     contact: {
       index: "03 / LET'S TALK",
