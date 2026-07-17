@@ -1397,6 +1397,10 @@ footer {
 .project-modal-header {
   border-bottom: 1px solid var(--line);
 }
+.project-modal[dir="rtl"] .project-modal-header {
+  direction: ltr;
+  text-align: left;
+}
 
 .project-modal-header > div {
   display: flex;

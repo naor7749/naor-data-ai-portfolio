@@ -11,18 +11,18 @@ const carProject: Record<Locale, Project> = {
     description:
       "An end-to-end benchmark for predicting vehicle listing prices with leakage-safe preprocessing, feature engineering, cross-validation, and model comparison.",
     outcome:
-      "XGBoost achieved an Rֲ² of 0.9627 with a mean absolute error of approximately $1,328.",
+      "XGBoost achieved an R² of 0.9627 with a mean absolute error of approximately $1,328.",
     technologies: ["Python", "XGBoost", "scikit-learn", "Feature Engineering"],
     href: "https://github.com/naor7749/car-price-ml-benchmark",
   },
   he: {
     number: "06",
     title: "Car Price ML Benchmark",
-    label: "׳׳׳™׳“׳” ׳׳•׳ ׳—׳™׳×",
+    label: "למידה מונחית",
     description:
-      "׳‘׳ ׳¦'׳׳¨׳§ ׳׳§׳¦׳” ׳׳§׳¦׳” ׳׳—׳™׳–׳•׳™ ׳׳—׳™׳¨׳™ ׳¨׳›׳‘׳™׳, ׳¢׳ preprocessing ׳׳׳ ׳“׳׳™׳₪׳× ׳׳™׳“׳¢, ׳”׳ ׳“׳¡׳× ׳₪׳™׳¦'׳¨׳™׳, Cross Validation ׳•׳”׳©׳•׳•׳׳× ׳׳•׳“׳׳™׳.",
+      "בנצ'מרק מקצה לקצה לחיזוי מחירי רכבים, עם עיבוד נתונים ללא דליפת מידע, הנדסת מאפיינים, Cross Validation והשוואת מודלים.",
     outcome:
-      "׳׳•׳“׳ XGBoost ׳”׳©׳™׳’ Rֲ² ׳©׳ 0.9627 ׳•׳©׳’׳™׳׳” ׳׳•׳—׳׳˜׳× ׳׳׳•׳¦׳¢׳× ׳©׳ ׳›-1,328 ׳“׳•׳׳¨.",
+      "מודל XGBoost השיג R-squared של 0.9627 ושגיאה מוחלטת ממוצעת של כ-1,328 דולר.",
     technologies: ["Python", "XGBoost", "scikit-learn", "Feature Engineering"],
     href: "https://github.com/naor7749/car-price-ml-benchmark",
   },
