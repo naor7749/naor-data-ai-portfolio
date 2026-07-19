@@ -142,10 +142,20 @@ export function PortfolioAgent({ locale }: PortfolioAgentProps) {
             : text.error;
         throw new Error(serverMessage);
       }
+      const reply = data.reply;
+
       setMessages((currentMessages) => [
         ...currentMessages,
-        { id: createId(), role: "assistant", content: data.reply },
+        {
+          id: createId(),
+          role: "assistant",
+          content: reply,
+        },
       ]);
+
+
+
+
     } catch (requestError) {
       console.error("Portfolio agent request failed:", requestError);
       setError(requestError instanceof Error ? requestError.message : text.error);
