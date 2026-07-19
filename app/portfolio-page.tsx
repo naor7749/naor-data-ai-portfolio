@@ -1,7 +1,7 @@
 import { siteContent, type Locale, type Project } from "./content";
 import { DocumentLanguage } from "./document-language";
 import { ProjectCard } from "./project-card";
-
+import { PortfolioAgent } from "./portfolio-agent";
 
 const carProject: Record<Locale, Project> = {
   en: {
@@ -297,6 +297,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           <a href="#about">{content.footer.top}</a>
         </div>
       </footer>
+      <PortfolioAgent locale={locale} />
     </main>
   );
 }

@@ -1,0 +1,7 @@
+ב-app/portfolio-page.tsx:
+
+1. הוסף בראש הקובץ:
+import { PortfolioAgent } from "./portfolio-agent";
+
+2. מיד אחרי </footer> ולפני </main> הוסף:
+<PortfolioAgent locale={locale} />
