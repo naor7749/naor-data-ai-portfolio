@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 const CONTACT = {
   phone: "+972 52-449-3963",
   email: "naor7749@gmail.com",
-  linkedin: "https://www.linkedin.com/in/naor-shem-tov-949bb9174/",
+  linkedin: "https://www.linkedin.com/in/naorshemtov/",
 } as const;
 
 const PROJECTS = {

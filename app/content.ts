@@ -273,7 +273,7 @@ export const siteContent: Record<Locale, LocalizedContent> = {
         {
           label: "LinkedIn",
           value: "linkedin.com/in/naor-shem-tov",
-          href: "https://www.linkedin.com/in/naor-shem-tov-949bb9174/",
+          href: "https://www.linkedin.com/in/naorshemtov/",
           // external: true,
         },
       ],

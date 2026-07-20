@@ -242,7 +242,7 @@ export function PortfolioAgent({ locale }: PortfolioAgentProps) {
             <span>{text.hint}</span>
             <div>
               <a href="mailto:naor7749@gmail.com">{text.email}</a>
-              <a href="https://www.linkedin.com/in/naor-shem-tov-949bb9174/" target="_blank" rel="noreferrer">{text.linkedin}</a>
+              <a href="https://www.linkedin.com/in/naorshemtov/" target="_blank" rel="noreferrer">{text.linkedin}</a>
             </div>
           </div>
         </section>
