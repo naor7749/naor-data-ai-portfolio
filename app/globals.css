@@ -453,11 +453,10 @@ summary {
   font-size: 13px;
   line-height: 1.7;
 }
-
 .signal-card {
   position: absolute;
-  right: 700px;
-  bottom: 80px;
+  right: 150px;
+  bottom: 70px;
   display: grid;
   gap: 3px;
   min-width: 174px;
@@ -1068,7 +1067,11 @@ footer {
   html {
     scroll-padding-top: 76px;
   }
-
+  .hero-download-button {
+  width: 100%;
+  min-width: 0;
+  flex: none;
+  }
   .shell {
     width: min(calc(100% - 40px), var(--max-width));
   }
@@ -2630,5 +2633,328 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+
+
+
+/* Hero professional links */
+
+.hero-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.hero-social-links a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  color: var(--muted);
+  border: 1px solid var(--line-strong);
+  background: rgba(7, 10, 13, 0.72);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.hero-social-links a::after {
+  position: absolute;
+  inset: -1px;
+  content: "";
+  border: 1px solid transparent;
+  pointer-events: none;
+  transition: border-color 180ms ease;
+}
+
+.hero-social-links a:hover,
+.hero-social-links a:focus-visible {
+  color: #041115;
+  border-color: var(--cyan);
+  outline: none;
+  background: var(--cyan);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.28);
+  transform: translateY(-3px);
+}
+
+.hero-social-links a:hover::after,
+.hero-social-links a:focus-visible::after {
+  border-color: rgba(83, 230, 255, 0.38);
+}
+
+.hero-social-links svg {
+  width: 22px;
+  height: 22px;
+}
+
+.hero-social-links .hero-resume-download {
+  margin-inline-start: 8px;
+  color: var(--cyan);
+  border-color: rgba(83, 230, 255, 0.52);
+}
+
+.hero-social-links .hero-resume-download::before {
+  position: absolute;
+  inset-inline-start: -10px;
+  width: 1px;
+  height: 24px;
+  content: "";
+  background: var(--line-strong);
+}
+
+@media (max-width: 760px) {
+  .hero-social-links {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .hero-social-links a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-social-links svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .hero-social-links .hero-resume-download {
+    margin-inline-start: 4px;
+  }
+
+  .hero-social-links .hero-resume-download::before {
+    inset-inline-start: -7px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-social-links {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .hero-social-links a {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero-social-links .hero-resume-download {
+    margin-inline-start: 0;
+  }
+
+  .hero-social-links .hero-resume-download::before {
+    display: none;
+  }
+}
+
+
+/* BEGIN hero resume and social row */
+
+.hero-actions-combined {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: min(100%, 620px);
+}
+
+.hero-actions-combined > .button {
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-bottom-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-bottom-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  
+}
+.portfolio-root[dir="rtl"] .hero-bottom-actions {
+  direction: rtl;
+}
+
+.portfolio-root[dir="rtl"] .hero-bottom-actions .hero-social-links {
+  direction: ltr;
+}
+
+.hero-download-button {
+  flex: none;
+  width: 305px;
+  min-width: 100;
+  justify-content: space-between;
+}
+
+.hero-action-file-label {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 24px;
+  padding-inline: 5px;
+  color: var(--cyan);
+  border: 1px solid rgba(83, 230, 255, 0.48);
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.hero-download-button:hover .hero-action-file-label,
+.hero-download-button:focus-visible .hero-action-file-label {
+  color: #041115;
+  border-color: rgba(4, 17, 21, 0.42);
+}
+
+.hero-bottom-actions .hero-social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: auto;
+  margin-top: 0;
+  direction: ltr;
+}
+
+.hero-bottom-actions .hero-social-links a {
+  width: 48px;
+  height: 48px;
+}
+
+.portfolio-root[dir="rtl"] .hero-bottom-actions {
+  align-items: flex-end;
+}
+
+.portfolio-root[dir="rtl"] .hero-download-button {
+  direction: rtl;
+}
+
+.portfolio-root[dir="rtl"] .hero-bottom-actions .hero-social-links {
+  direction: ltr;
+}
+
+@media (max-width: 760px) {
+  .hero-actions-combined {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .hero-bottom-actions,
+  .portfolio-root[dir="rtl"] .hero-bottom-actions {
+    align-items: stretch;
+  }
+
+  .hero-download-button {
+    width: 100%;
+  }
+
+  .hero-bottom-actions .hero-social-links {
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .portfolio-root[dir="rtl"] .hero-bottom-actions .hero-social-links {
+    align-self: flex-end;
+  }
+
+  .hero-bottom-actions .hero-social-links a {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 760px) {
+  .signal-card {
+    display: none;
+  }
+}
+
+
+/* Resume button and social icons alignment */
+
+:root {
+  --resume-button-width: 260px;
+}
+
+@media (min-width: 761px) {
+  .hero-bottom-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: var(--resume-button-width) !important;
+  }
+
+  .hero-download-button {
+    flex: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .hero-bottom-actions .hero-social-links {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: 100% !important;
+    margin: 0 !important;
+    direction: ltr;
+  }
+
+  /* Hebrew: entire block on the right */
+  .portfolio-root[dir="rtl"] .hero-bottom-actions {
+    justify-self: start !important;
+    align-items: stretch !important;
+  }
+
+  .portfolio-root[dir="rtl"] .hero-bottom-actions .hero-social-links {
+    justify-content: flex-end !important;
+  }
+
+  /* English: entire block on the left */
+  .portfolio-root[dir="ltr"] .hero-bottom-actions {
+    justify-self: start !important;
+    align-items: stretch !important;
+  }
+
+  .portfolio-root[dir="ltr"] .hero-bottom-actions .hero-social-links {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-bottom-actions {
+    width: 100% !important;
+  }
+
+  .hero-download-button {
+    width: 100% !important;
+  }
+
+  .hero-bottom-actions .hero-social-links {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .portfolio-root[dir="rtl"] .hero-bottom-actions .hero-social-links {
+    justify-content: flex-end !important;
+  }
+
+  .portfolio-root[dir="ltr"] .hero-bottom-actions .hero-social-links {
+    justify-content: flex-start !important;
   }
 }

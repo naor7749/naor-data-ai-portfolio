@@ -83,6 +83,76 @@ function DataCanvas() {
     </div>
   );
 }
+type SocialIconName =
+  | "linkedin"
+  | "github"
+  | "whatsapp"
+  | "email"
+  | "resume";
+
+function SocialIcon({ name }: { name: SocialIconName }) {
+  if (name === "linkedin") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M5.25 3.5A1.75 1.75 0 1 1 5.25 7a1.75 1.75 0 0 1 0-3.5ZM3.75 8.5h3v11h-3v-11Zm5 0h2.88v1.5h.04c.4-.76 1.38-1.96 3.83-1.96 4.1 0 4.86 2.7 4.86 6.21v5.25h-3v-4.65c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73h-3v-11Z"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "github") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.91-2.78.62-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.85.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.36 9.36 0 0 1 12 6.91a9.4 9.4 0 0 1 2.5.35c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.35 4.8-4.58 5.06.36.32.68.95.68 1.91 0 1.38-.01 2.49-.01 2.83 0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "whatsapp") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M12.04 2a9.82 9.82 0 0 0-8.48 14.75L2 22l5.39-1.5A9.89 9.89 0 1 0 12.04 2Zm0 17.82a7.8 7.8 0 0 1-3.98-1.09l-.29-.17-3.2.89.86-3.12-.19-.32a7.77 7.77 0 1 1 6.8 3.81Zm4.27-5.83c-.23-.12-1.38-.69-1.59-.77-.21-.08-.37-.12-.52.12-.16.23-.6.77-.74.93-.13.16-.27.18-.5.06-.23-.12-.98-.37-1.86-1.18-.69-.62-1.15-1.38-1.29-1.61-.13-.23-.01-.36.1-.48.1-.1.23-.27.35-.41.12-.13.16-.23.23-.39.08-.15.04-.29-.02-.41-.06-.12-.52-1.27-.72-1.74-.19-.46-.38-.4-.52-.41h-.45c-.16 0-.41.06-.62.29-.21.23-.81.81-.81 1.97s.83 2.28.95 2.44c.12.15 1.63 2.55 4.04 3.47.56.2 1 .32 1.34.41.56.18 1.08.15 1.48.09.45-.07 1.38-.58 1.58-1.14.19-.56.19-1.04.13-1.14-.05-.1-.21-.16-.44-.28Z"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "email") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3 5.5h18v13H3v-13Zm1.2 1.1L12 12.4l7.8-5.8"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 2.75h7l4 4v14.5H7V2.75Zm7 0v4h4M12.5 10v7m0 0-3-3m3 3 3-3"
+      />
+    </svg>
+  );
+}
+
 
 export function PortfolioPage({ locale }: { locale: Locale }) {
   const content = siteContent[locale];
@@ -134,7 +204,6 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           </details>
         </div>
       </header>
-
       <section className="hero" id="about">
         <div className="hero-visual">
           <DataCanvas />
@@ -143,21 +212,100 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
         <div className="shell hero-layout" id="main-content">
           <div className="hero-copy">
             <p className="eyebrow">DATA, AI &amp; BI</p>
+
             <h1>{content.hero.name}</h1>
+
             <h2>
               {content.hero.headline[0]}
               <br />
               {content.hero.headline[1]}
             </h2>
-            <p className="hero-description">{content.hero.description}</p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#projects">
-                {content.hero.projectsCta} <ArrowIcon locale={locale} />
-              </a>
-              <a className="button button-secondary" href="#experience">
-                {content.hero.resumeCta} <ArrowIcon locale={locale} />
-              </a>
-            </div>
+
+            <p className="hero-description">
+              {content.hero.description}
+            </p>
+
+            <div className="hero-actions hero-actions-combined">
+        <a
+          className="button button-primary hero-action-projects"
+          href="#projects"
+        >
+          {content.hero.projectsCta}
+          <ArrowIcon locale={locale} />
+        </a>
+
+        <a
+          className="button button-secondary hero-action-overview"
+          href="#experience"
+        >
+          {content.hero.resumeCta}
+          <ArrowIcon locale={locale} />
+        </a>
+
+        <div className="hero-bottom-actions">
+          <a
+            className="button button-secondary hero-download-button"
+            href="/Naor-Shem-Tov-CV.pdf"
+            download="Naor-Shem-Tov-CV.pdf"
+          >
+            {locale === "he" ? "\u05d4\u05d5\u05e8\u05d3\u05ea \u05e7\u05d5\u05e8\u05d5\u05ea \u05d7\u05d9\u05d9\u05dd" : "Download Resume"}
+            <span className="hero-action-file-label" aria-hidden="true">
+              PDF
+            </span>
+          </a>
+
+          <div
+            className="hero-social-links"
+            aria-label={
+              locale === "he"
+                ? "׳§׳™׳©׳•׳¨׳™׳ ׳׳§׳¦׳•׳¢׳™׳™׳"
+                : "Professional links"
+            }
+          >
+            <a
+              href="https://www.linkedin.com/in/naorshemtov/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <SocialIcon name="linkedin" />
+            </a>
+
+            <a
+              href="https://github.com/naor7749"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <SocialIcon name="github" />
+            </a>
+
+            <a
+              href="https://wa.me/972524493963"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+              title="WhatsApp"
+            >
+              <SocialIcon name="whatsapp" />
+            </a>
+
+            <a
+              href="mailto:naor7749@gmail.com"
+              aria-label={
+                locale === "he"
+                  ? "׳©׳׳™׳—׳× ׳“׳•׳׳¨ ׳׳׳§׳˜׳¨׳•׳ ׳™"
+                  : "Send email"
+              }
+              title={locale === "he" ? "׳“׳•׳׳¨ ׳׳׳§׳˜׳¨׳•׳ ׳™" : "Email"}
+            >
+              <SocialIcon name="email" />
+            </a>
+          </div>
+        </div>
+      </div>
           </div>
         </div>
 
@@ -165,13 +313,17 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           <div className="shell credibility-grid">
             {content.hero.credibility.map((item, index) => (
               <div className="credibility-item" key={item}>
-                <span className="credibility-icon">{index === 0 ? "◇" : index === 1 ? "</>" : "✦"}</span>
+                <span className="credibility-icon">
+                  {index === 0 ? "◇" : index === 1 ? "</>" : "✦"}
+                </span>
+
                 <span>{item}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
+
       <section className="section projects-section" id="projects">
         <div className="shell">
           <div className="section-heading reveal">
