@@ -226,86 +226,98 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             </p>
 
             <div className="hero-actions hero-actions-combined">
-        <a
-          className="button button-primary hero-action-projects"
-          href="#projects"
-        >
-          {content.hero.projectsCta}
-          <ArrowIcon locale={locale} />
-        </a>
+              <a
+                className="button button-primary hero-action-projects"
+                href="#projects"
+              >
+                {content.hero.projectsCta}
+                <ArrowIcon locale={locale} />
+              </a>
 
-        <a
-          className="button button-secondary hero-action-overview"
-          href="#experience"
-        >
-          {content.hero.resumeCta}
-          <ArrowIcon locale={locale} />
-        </a>
+              <div className="hero-bottom-actions">
+                <div className="hero-secondary-actions">
+                  <a
+                    className="button button-secondary hero-action-overview"
+                    href="#experience"
+                  >
+                    {content.hero.resumeCta}
+                    <ArrowIcon locale={locale} />
+                  </a>
 
-        <div className="hero-bottom-actions">
-          <a
-            className="button button-secondary hero-download-button"
-            href="/Naor-Shem-Tov-CV.pdf"
-            download="Naor-Shem-Tov-CV.pdf"
-          >
-            {locale === "he" ? "\u05d4\u05d5\u05e8\u05d3\u05ea \u05e7\u05d5\u05e8\u05d5\u05ea \u05d7\u05d9\u05d9\u05dd" : "Download Resume"}
-            <span className="hero-action-file-label" aria-hidden="true">
-              PDF
-            </span>
-          </a>
+                  <a
+                    className="button button-secondary hero-download-button"
+                    href="/Naor-Shem-Tov-CV.pdf"
+                    download="Naor-Shem-Tov-CV.pdf"
+                  >
+                    {locale === "he"
+                      ? "\u05d4\u05d5\u05e8\u05d3\u05ea \u05e7\u05d5\u05e8\u05d5\u05ea \u05d7\u05d9\u05d9\u05dd"
+                      : "Download Resume"}
 
-          <div
-            className="hero-social-links"
-            aria-label={
-              locale === "he"
-                ? "׳§׳™׳©׳•׳¨׳™׳ ׳׳§׳¦׳•׳¢׳™׳™׳"
-                : "Professional links"
-            }
-          >
-            <a
-              href="https://www.linkedin.com/in/naorshemtov/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-            >
-              <SocialIcon name="linkedin" />
-            </a>
+                    <span
+                      className="hero-action-file-label"
+                      aria-hidden="true"
+                    >
+                      PDF
+                    </span>
+                  </a>
+                </div>
 
-            <a
-              href="https://github.com/naor7749"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              title="GitHub"
-            >
-              <SocialIcon name="github" />
-            </a>
+                <div
+                  className="hero-social-links"
+                  aria-label={
+                    locale === "he"
+                      ? "\u05e7\u05d9\u05e9\u05d5\u05e8\u05d9\u05dd \u05de\u05e7\u05e6\u05d5\u05e2\u05d9\u05d9\u05dd"
+                      : "Professional links"
+                  }
+                >
+                  <a
+                    href="https://www.linkedin.com/in/naorshemtov/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn"
+                    title="LinkedIn"
+                  >
+                    <SocialIcon name="linkedin" />
+                  </a>
 
-            <a
-              href="https://wa.me/972524493963"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-              title="WhatsApp"
-            >
-              <SocialIcon name="whatsapp" />
-            </a>
+                  <a
+                    href="https://github.com/naor7749"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="GitHub"
+                    title="GitHub"
+                  >
+                    <SocialIcon name="github" />
+                  </a>
 
-            <a
-              href="mailto:naor7749@gmail.com"
-              aria-label={
-                locale === "he"
-                  ? "׳©׳׳™׳—׳× ׳“׳•׳׳¨ ׳׳׳§׳˜׳¨׳•׳ ׳™"
-                  : "Send email"
-              }
-              title={locale === "he" ? "׳“׳•׳׳¨ ׳׳׳§׳˜׳¨׳•׳ ׳™" : "Email"}
-            >
-              <SocialIcon name="email" />
-            </a>
-          </div>
-        </div>
-      </div>
+                  <a
+                    href="https://wa.me/972524493963"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="WhatsApp"
+                    title="WhatsApp"
+                  >
+                    <SocialIcon name="whatsapp" />
+                  </a>
+
+                  <a
+                    href="mailto:naor7749@gmail.com"
+                    aria-label={
+                      locale === "he"
+                        ? "\u05e9\u05dc\u05d9\u05d7\u05ea \u05d3\u05d5\u05d0\u05e8 \u05d0\u05dc\u05e7\u05d8\u05e8\u05d5\u05e0\u05d9"
+                        : "Send email"
+                    }
+                    title={
+                      locale === "he"
+                        ? "\u05d3\u05d5\u05d0\u05e8 \u05d0\u05dc\u05e7\u05d8\u05e8\u05d5\u05e0\u05d9"
+                        : "Email"
+                    }
+                  >
+                    <SocialIcon name="email" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -316,7 +328,6 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                 <span className="credibility-icon">
                   {index === 0 ? "◇" : index === 1 ? "</>" : "✦"}
                 </span>
-
                 <span>{item}</span>
               </div>
             ))}

@@ -2958,3 +2958,294 @@ footer {
     justify-content: flex-start !important;
   }
 }
+
+
+
+
+/* Final hero action layout */
+
+.hero-actions-combined {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: min(100%, 620px);
+}
+
+.hero-actions-combined > .hero-action-projects {
+  width: 100%;
+}
+
+.hero-bottom-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-secondary-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.hero-secondary-actions .button {
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-download-button {
+  justify-content: space-between;
+}
+
+.hero-bottom-actions .hero-social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: auto;
+  margin: 0;
+  direction: ltr;
+}
+
+/* Hebrew alignment */
+
+.portfolio-root[dir="rtl"] .hero-bottom-actions {
+  align-items: flex-end;
+}
+
+.portfolio-root[dir="rtl"] .hero-secondary-actions {
+  direction: rtl;
+}
+
+.portfolio-root[dir="rtl"] .hero-bottom-actions .hero-social-links {
+  align-self: flex-end;
+}
+
+/* English alignment */
+
+.portfolio-root[dir="ltr"] .hero-bottom-actions {
+  align-items: flex-start;
+}
+
+.portfolio-root[dir="ltr"] .hero-bottom-actions .hero-social-links {
+  align-self: flex-start;
+}
+
+@media (max-width: 760px) {
+  .hero-actions-combined {
+    width: 100% !important;
+  }
+
+  .hero-secondary-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions-combined .button {
+    width: 100%;
+  }
+}
+
+
+/* Final sizing for hero buttons */
+
+.hero-actions-combined {
+  width: min(100%, 620px) !important;
+}
+
+.hero-actions-combined > .hero-action-projects {
+  width: 100% !important;
+  min-height: 54px;
+}
+
+.hero-bottom-actions {
+  width: 100% !important;
+  max-width: none !important;
+  justify-self: stretch !important;
+  align-items: stretch !important;
+}
+
+.hero-secondary-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.hero-secondary-actions .button {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 54px !important;
+  padding: 13px 20px !important;
+  font-size: 15px !important;
+}
+
+.hero-download-button {
+  width: 100% !important;
+  min-width: 0 !important;
+  flex: none !important;
+}
+
+/* Icons below the buttons */
+
+.hero-bottom-actions .hero-social-links {
+  width: auto !important;
+  margin-top: 2px !important;
+}
+
+.portfolio-root[dir="rtl"]
+  .hero-bottom-actions
+  .hero-social-links {
+  align-self: flex-end !important;
+}
+
+.portfolio-root[dir="ltr"]
+  .hero-bottom-actions
+  .hero-social-links {
+  align-self: flex-start !important;
+}
+
+@media (max-width: 760px) {
+  .hero-secondary-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-secondary-actions .button {
+    min-height: 50px !important;
+  }
+}
+
+/* BEGIN forced resume flex order */
+
+@media (min-width: 761px) {
+  .portfolio-root .hero-secondary-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    direction: ltr !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .portfolio-root .hero-secondary-actions > .button {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* English: Overview left, Download right */
+  .portfolio-root[dir="ltr"] .hero-action-overview {
+    order: 1 !important;
+  }
+
+  .portfolio-root[dir="ltr"] .hero-download-button {
+    order: 2 !important;
+  }
+
+  /* Hebrew: Download left, Overview right */
+  .portfolio-root[dir="rtl"] .hero-download-button {
+    order: 1 !important;
+    direction: rtl !important;
+  }
+
+  .portfolio-root[dir="rtl"] .hero-action-overview {
+    order: 2 !important;
+    direction: rtl !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .portfolio-root .hero-secondary-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    direction: ltr !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .portfolio-root .hero-secondary-actions > .button {
+    flex: none !important;
+    width: 100% !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Mobile in both languages: Overview first, Download second */
+  .portfolio-root .hero-action-overview {
+    order: 1 !important;
+  }
+
+  .portfolio-root .hero-download-button {
+    order: 2 !important;
+  }
+
+  .portfolio-root[dir="rtl"] .hero-action-overview,
+  .portfolio-root[dir="rtl"] .hero-download-button {
+    direction: rtl !important;
+  }
+}
+
+/* END forced resume flex order */
+/* Keep social icons on the correct physical side */
+
+.hero-bottom-actions > .hero-social-links {
+  width: fit-content !important;
+  max-width: 100% !important;
+  align-self: auto !important;
+  direction: ltr !important;
+}
+
+/* Hebrew: icons on the right */
+.portfolio-root[dir="rtl"] .hero-bottom-actions > .hero-social-links {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* English: icons on the left */
+.portfolio-root[dir="ltr"] .hero-bottom-actions > .hero-social-links {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* BEGIN final social alignment */
+
+/* Make the full lower action area span the complete button row */
+.portfolio-root .hero-actions-combined .hero-bottom-actions {
+  width: 100% !important;
+  max-width: none !important;
+  align-items: stretch !important;
+  justify-self: stretch !important;
+}
+
+/* Make the icon row use the same full width */
+.portfolio-root
+  .hero-actions-combined
+  .hero-bottom-actions
+  > .hero-social-links {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  max-width: none !important;
+  align-self: stretch !important;
+  margin: 0 !important;
+  direction: ltr !important;
+}
+
+/* Hebrew: icons at the physical right edge */
+.portfolio-root[dir="rtl"]
+  .hero-actions-combined
+  .hero-bottom-actions
+  > .hero-social-links {
+  justify-content: flex-end !important;
+}
+
+/* English: icons at the physical left edge */
+.portfolio-root[dir="ltr"]
+  .hero-actions-combined
+  .hero-bottom-actions
+  > .hero-social-links {
+  justify-content: flex-start !important;
+}
+
+/* END final social alignment */
